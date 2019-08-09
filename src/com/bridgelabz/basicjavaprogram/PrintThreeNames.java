@@ -15,6 +15,7 @@ public class PrintThreeNames
 		String input=utility.stringscan();
 		String words[]=input.split("\\s");
 		System.out.println("Reverse string: ");
+	
 		
 		
 System.out.println("hi "+ utility.printThreeNames(words));

@@ -1,6 +1,6 @@
 /******************************************************************************
  *  
- *  Purpose: solving quadratic equation using given formula.
+ *  Purpose: find the day of the week
  *
  *  @author  Dhanusree
  *  @version 1.0
@@ -11,18 +11,14 @@ package com.bridgelabz.basicjavaprogram;
 
 import com.bridgelabz.util.utility;
 
-public class Quadratic 
-{
-	public static void main(String args[])
-	{
-		double a,b,c;
-		System.out.println("Enter the values of a,b,c:");
-		a=utility.doublescan();
-		b=utility.doublescan();
-		c=utility.doublescan();
-		utility.quadratic(a, b, c);
-		
-		
+public class DayOfWeek {
+	public static void main(String args[]) {
+		int day, month, year;
+		day = Integer.parseInt(args[0]);
+		month = Integer.parseInt(args[1]);
+		year = Integer.parseInt(args[2]);
+		utility.dayofweek(day, month, year);
+
 	}
 
 }
