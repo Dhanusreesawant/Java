@@ -4,6 +4,30 @@ import java.util.Random;
 import java.util.Scanner;
 
 
+/**
+ * @author admin1
+ *
+ */
+/**
+ * @author admin1
+ *
+ */
+/**
+ * @author admin1
+ *
+ */
+/**
+ * @author admin1
+ *
+ */
+/**
+ * @author admin1
+ *
+ */
+/**
+ * @author admin1
+ *
+ */
 public class utility
 {
 	private static String[] args;
@@ -353,17 +377,87 @@ public class utility
 			System.out.println(sum);
 			
 		}
+		/**
+		 * compute the square root of a nonnegative number c given in the input using Newton's method
+		 */
 		public static void sqrt()
 		{
 			System.out.println("enter the value:");
 			double c=doublescan();
 			double t=c;
-			double epilson=1e-15;
+			double epilson=1.0e-15;
 			while(Math.abs(t-(c*t))>epilson)
 			{
 				t=(t*(t/c))/2;
 			}
-			System.out.println(c);
+			System.out.println(t);
+		}
+		
+		/**
+		 * @param stack
+		 * @param goal
+		 * @param nooftimes
+		 */
+		public static void gamblersimulator(int stack,int goal,int nooftimes)
+		{
+			int win=0;
+			int bet=0;
+			
+			for(int i=0;i<=nooftimes;i++)
+			{
+				int cash=stack;	
+				bet++;
+				while(cash>0 && cash<goal)
+				{
+					if(Math.random()<0.5)
+					{
+						cash++;
+						System.out.println(cash);
+					}
+					else
+					{
+						cash--;
+						
+					}
+				}
+				if(cash==goal)
+				{
+					win++;
+				}
+				else if(cash==0)
+				{
+					
+					break;
+				}
+			}
+			
+			System.out.println(win+"out of "+nooftimes);
+			
+		}
+		public static void prime(int start,int stop)
+		{
+			int count=0;
+			for(int i=start;i<stop;i++)
+			{
+				for(int j=2;j<i;j++)
+				{
+					if(i%j==0)
+					{
+						count=0;
+						break;
+					}
+					else
+					{
+						count=1;
+					}
+				}
+				if(count==1)
+				{
+				  System.out.println(i);
+				}
+			}
+			
+			
 		}
 		 
 	}
