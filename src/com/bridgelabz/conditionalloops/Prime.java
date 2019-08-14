@@ -1,3 +1,13 @@
+
+/******************************************************************************
+ *  
+ *  Purpose: print the prime number in given range
+ *
+ *  @author  Dhanusree
+ *  @version 1.0
+ *  @since   09-08-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.conditionalloops;
 
 import com.bridgelabz.util.utility;

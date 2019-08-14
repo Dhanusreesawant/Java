@@ -1,3 +1,12 @@
+/******************************************************************************
+ *  
+ *  Purpose: print pattern as pyramid
+ *
+ *  @author  Dhanusree
+ *  @version 1.0
+ *  @since   09-08-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.conditionalloops;
 
 public class Pattern {

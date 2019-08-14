@@ -17,7 +17,8 @@ public class DayOfWeek {
 		day = Integer.parseInt(args[0]);
 		month = Integer.parseInt(args[1]);
 		year = Integer.parseInt(args[2]);
-		utility.dayofweek(day, month, year);
+		System.out.println(utility.dayofweek(day, month, year));
+		
 
 	}
 

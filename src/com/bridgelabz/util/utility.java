@@ -1,5 +1,7 @@
 package com.bridgelabz.util;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -253,15 +255,16 @@ public class utility
 		 * @param day  
 		 * @param month 
 		 * @param year 
+		 * @return 
 		 */
-		public static void dayofweek(int day,int month,int year)
+		public static int dayofweek(int day,int month,int year)
 		{
 			int year1 = year -(14 - month) / 12;
 			int findleapornot = year1 + (year1/4) - (year1/100) + (year1/400);
 			int month1 = month + 12 * ((14 - month) / 12) - 2;
 			int finddayofweek = (day + findleapornot + ((31*month1)/ 12)) % 7;
 			
-			System.out.println(finddayofweek);
+			return finddayofweek;
 			
 		}
 		/**
@@ -459,8 +462,122 @@ public class utility
 			
 			
 		}
+		public static boolean palindrome(String str1)
+		{
+			String rev="";
+			
+		    int len=str1.length();
+			for(int i=len-1;i>=0;i--)
+				rev=rev+str1.charAt(i);
+			
+				if(str1.equals(rev))
+					return true;
+				else
+				   return false;
+		}
+		public static void anagram(String str1,String str2)
+		{
+			int flg=0,flg1=0;
+			int len;
+			int l1=str1.length();
+			int l2=str2.length();
+			if(l1==l2)
+			{
+				len=l1;
+				for(int i=0;i<len;i++)
+				{
+					flg=0;
+					for(int j=0;j<len;j++)
+					{
+						if(str1.charAt(i)==str2.charAt(j))
+						{
+							flg=1;
+							break;
+						}
+					}
+					if(flg==0)
+					{
+						flg1=1;
+						break;
+						
+					}
+					
+				}
+				if(flg1==1)
+				{
+					System.out.println("not anagram");
+				}
+				else
+				{
+					System.out.println("anagram");
+				}
+			}
+			else
+			{
+				System.out.println("not anagram");
+			
+			}
+
+		}
+		public static boolean isleapyear(int year)
+		{
+			if((year%4==0)&&(year%100!=0))
+			{
+				return true;
+			}
+			if((year%400)==0)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		public static void swap(char[] arr,int i,int j)
+		{
+			char c=arr[i];
+			arr[i]=arr[j];
+			arr[j]=c;
+		}
+		public static void rev(char[] arr,int i,int j)
+		{
+			while(i<j)
+			{
+				swap(arr,i++,j--);
+			}
+		}
+		public static void permutations(String str,int n)
+		{
+			char[]s=str.toCharArray();
+			Arrays.sort(s);
+
+			while(true)
+			{
+				System.out.print(String.valueOf(s) + " ");
+
+				int i = n - 1;
+				while (s[i-1] >= s[i])
+				{
+					
+					if (--i == 0)
+						return;
+				}
+
+				int j = n - 1;
+				while (j > i && s[j] <= s[i-1])
+					j--;
+				swap(s, i-1, j);
+				rev(s, i, n-1);
+			
+			}
+			
+		}
+			
+}
+		
 		 
-	}
+	
 	
 
 	
