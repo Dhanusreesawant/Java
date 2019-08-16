@@ -15,7 +15,9 @@ public class Sqrt {
 
 	public static void main(String[] args) 
 	{
-		utility.sqrt();
+		double c=Double.parseDouble(args[0]);
+		double epilson=1.0e-15;
+		System.out.println(utility.sqrt(c,epilson));
 	}
 
 }

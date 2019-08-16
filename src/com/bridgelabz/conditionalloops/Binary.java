@@ -9,11 +9,16 @@
  ******************************************************************************/
 package com.bridgelabz.conditionalloops;
 
+import com.bridgelabz.util.utility;
+
 public class Binary {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) 
+	{
+		int n;
+		n=utility.intscan();
+		System.out.println(utility.binary(n));
+		
 	}
 
 }

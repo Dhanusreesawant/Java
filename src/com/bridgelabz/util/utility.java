@@ -371,29 +371,29 @@ public class utility
 		 * @param sum added the n
 		 * @param number
 		 */
-		public static void harmonic(double sum,double number)
+		public static double harmonic(double sum,double number)
 		{
 			for(int i=1;i<=number;i++)
 			{
 				sum+=1.0/i;
 			}
-			System.out.println(sum);
+			return sum;
 			
 		}
 		/**
 		 * compute the square root of a nonnegative number c given in the input using Newton's method
 		 */
-		public static void sqrt()
+		public static double sqrt(double c,double epilson)
 		{
-			System.out.println("enter the value:");
-			double c=doublescan();
+			
+			
 			double t=c;
-			double epilson=1.0e-15;
+			
 			while(Math.abs(t-(c*t))>epilson)
 			{
 				t=(t*(t/c))/2;
 			}
-			System.out.println(t);
+			return t;
 		}
 		
 		/**
@@ -437,6 +437,10 @@ public class utility
 			System.out.println(win+"out of "+nooftimes);
 			
 		}
+		/**
+		 * @param start prime number start with given number
+		 * @param stop prime number stop with given number
+		 */
 		public static void prime(int start,int stop)
 		{
 			int count=0;
@@ -462,8 +466,13 @@ public class utility
 			
 			
 		}
+		/**
+		 * @param str1 check string palindrome or not
+		 * @return
+		 */
 		public static boolean palindrome(String str1)
 		{
+			
 			String rev="";
 			
 		    int len=str1.length();
@@ -475,6 +484,7 @@ public class utility
 				else
 				   return false;
 		}
+		
 		public static void anagram(String str1,String str2)
 		{
 			int flg=0,flg1=0;
@@ -554,22 +564,200 @@ public class utility
 
 			while(true)
 			{
-				System.out.print(String.valueOf(s) + " ");
+				System.out.print(String.valueOf(s) + "\n");
 
 				int i = n - 1;
 				while (s[i-1] >= s[i])
 				{
-					
 					if (--i == 0)
 						return;
 				}
-
 				int j = n - 1;
 				while (j > i && s[j] <= s[i-1])
 					j--;
 				swap(s, i-1, j);
 				rev(s, i, n-1);
 			
+			}
+			
+			
+			
+		}
+		public static void permutation(char[] ch, int currentIndex)
+		{
+			if (currentIndex == ch.length - 1) 
+			{
+				System.out.println(String.valueOf(ch));
+				
+			}
+
+			for (int i = currentIndex; i < ch.length; i++)
+			{
+				utility.swap(ch, currentIndex, i);
+				permutation(ch, currentIndex + 1);
+				utility.swap(ch, currentIndex, i);
+			
+			}
+		}
+		public static void calender(int month,int year)
+		{
+			String[] months= {"Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"};
+			int[] days= {0,31,28,31,30,31,30,31,31,30,31,30,31};
+			if(month==2 && utility.isleapyear(year)==true)
+			{
+					days[month]=29;
+			}
+			
+			System.out.println(" s  m  tu w  th f  s");
+			int d=utility.dayofweek(1,month,year);
+			for(int i=0;i<d;i++)
+				System.out.print("   ");
+			for(int day1=1;day1<=days[month];day1++)
+			{
+				System.out.printf("%2d ", day1);
+				if(((day1+d)%7==0) || (day1==days[month]))
+				{
+					System.out.println();
+
+				}
+			}
+
+		}
+		public static void permut(String ch, String str)
+		{
+			if (str.length() == 0) {
+				System.out.println(ch);
+			}
+
+			for (int i = 0; i < str.length(); i++)
+			{
+				
+				String newChar = ch + str.charAt(i);
+				String newRemaining = str.substring(0, i) +str.substring(i + 1);
+				permut(newChar, newRemaining);
+			}
+		}
+		public static double sintaylor(double x)
+		{
+			 
+			 x = x % (2 * Math.PI);
+			 double term = 1.0;     
+			 double sum  = 0.0;      
+			 for (int i=1;i!=0.0;i++) 
+			 {
+			   term *= (x / i);
+			   if (i % 4 == 1) sum += term;
+			   if (i % 4 == 3) sum -= term;
+			 }
+			 return sum;
+		 }
+		public static double costaylor(double x)
+		{
+			 
+			 x = x % (2 * Math.PI);
+			 double term = 1.0;     
+			 double sum  = 1.0;      
+			 for (int i=2;i!=0.0;i++) 
+			 {
+			   term *= (x / i);
+			   if (i % 4 == 0) sum += term;
+			   if (i % 4 == 2) sum -= term;
+			 }
+			 return sum;
+		 }
+		public static boolean isprime(int number)
+		{
+			int flag=0;
+			for(int i=2;i<=number/2;i++)
+			{
+				if(number%i==0)
+				{
+					flag=1;
+					break;
+				}
+			}
+			if(flag==0)
+			{
+				return true;
+				
+			}
+			return false;
+		
+		}
+		public static long factorial(int n)
+		{
+			long factorial=1;
+			for(int i=1;i<=n;i++)
+			{
+				factorial=factorial*i;
+			}
+			return factorial;
+		}
+		public static double compoundintereset(double c,double r,double t)
+		{
+			 
+			double presentValue=(c/Math.pow(1+r, t));
+			return presentValue;
+		}
+		public static int max(int[] arr,int n) 
+		{
+			
+			
+			int max=arr[0];
+			for(int i=0;i<n;i++)
+			{
+				if(max<arr[i])
+				{
+					max=arr[i];
+				}
+				
+			}
+			return max;
+			
+		}
+		public static int min(int[] arr,int n) 
+		{
+			
+			int min=arr[0];
+			for(int i=0;i<n;i++)
+			{
+				if(min>arr[i])
+				{
+					min=arr[i];
+				}
+				
+			}
+			return min;
+			
+		}
+		public static String binary(int n)
+		{
+			int count=0,a;
+			String s="";
+			while(n>0)
+			{
+				a=n%2;
+				if(a==1)
+				{
+					count++;
+				}
+				s=s+""+a;
+				n=n/2;
+			}
+			return s;
+		}
+		public static boolean slope(int x1,int y1,int x2,int y2,int x3,int y3)
+		{
+			int AB=(y2-y1)/(x2-x1);
+			int BC=(y3-y2)/(x3-x2);
+			int AC=(y1-y3)/(x1-x3);
+			if(AB==BC && AB==AC)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
 			}
 			
 		}

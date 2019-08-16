@@ -18,7 +18,7 @@ public class Harmonic {
 		
 			double sum=0.0;
 			double number=Double.parseDouble(args[0]);
-			utility.harmonic(sum,number);
+			System.out.println(utility.harmonic(sum,number));
 	}
 
 }

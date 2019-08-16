@@ -6,7 +6,7 @@ public class Rolldie {
 
 	public static void main(String[] args) 
 	{
-		int noftimes=utility.intscan();
+		int noftimes=8;
 		int dices;
 		int one=0;
 		int two=0;
@@ -21,6 +21,7 @@ public class Rolldie {
 		 if(dices==1)
 		 {
 			 one++;
+			
 		 }
 		 else if(dices==2)
 		 {
@@ -44,9 +45,9 @@ public class Rolldie {
 		 }
 		 
 		}
-	//	if(one>two && )
+	
 		 int max=Math.max(one, Math.max(two, Math.max(three, Math.max(four, Math.max(five, six)))));
-		 System.out.println("max of"+ max);
+		 System.out.println("max of"+ max+"dices");
 		 
 
 	}
