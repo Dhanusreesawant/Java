@@ -7,11 +7,11 @@
  *  @since   13-08-2019
  *
  ******************************************************************************/
-package com.bridgelabz.staticfunctionsprograms;
+package com.bridgelabz.library;
 
 import com.bridgelabz.util.utility;
 
-public class Anagram {
+public class StringFunction {
 
 	public static void main(String[] args) {
 		

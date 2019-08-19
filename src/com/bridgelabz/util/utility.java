@@ -6,30 +6,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 
-/**
- * @author admin1
- *
- */
-/**
- * @author admin1
- *
- */
-/**
- * @author admin1
- *
- */
-/**
- * @author admin1
- *
- */
-/**
- * @author admin1
- *
- */
-/**
- * @author admin1
- *
- */
 public class utility
 {
 	private static String[] args;
@@ -37,6 +13,13 @@ public class utility
 	{
 		Scanner scanner=new Scanner(System.in);
 		int value=scanner.nextInt();
+		return value;
+		
+	}
+	public static long longscan()
+	{
+		Scanner scanner=new Scanner(System.in);
+		long value=scanner.nextLong();
 		return value;
 		
 	}
@@ -759,6 +742,25 @@ public class utility
 			{
 				return false;
 			}
+			
+		}
+		public static void primenumber()
+		{
+			int sum=2;
+			int flg=0;
+			for(int i=2;i<1000;i++)
+			{
+				if(i%2==0)
+				{
+					flg=1;
+					break;
+				}
+				else
+				{
+					sum=sum+i;
+				}
+			}
+			System.out.println(sum);
 			
 		}
 			
