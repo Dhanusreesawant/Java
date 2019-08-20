@@ -763,6 +763,36 @@ public class utility
 			System.out.println(sum);
 			
 		}
+		public static void bubbleSort(int number)
+		{
+			int array[];
+			int i,j,c;
+			int temp=0;
+			array = new int[number];
+		 
+		    System.out.println("Enter " + number + " integers");
+		    for ( c = 0; c < number; c++)
+		    {
+		      array[c] = utility.intscan();
+		    }
+		    System.out.println("Array of sorted elements:");
+		    for( i=0;i<array.length;i++)
+		    {
+		    	for( j=0;j<(array.length-i-1);j++)
+		    	{
+		    		if(array[j]>array[j+1])
+		    		{
+		    			temp=array[j];
+		    			array[j]=array[j+1];
+		    			array[j+1]=temp;
+		    		}
+		    		
+		    	}
+		    	
+		    	System.out.println(array[j]);
+		    }
+		    
+		}
 			
 }
 		
