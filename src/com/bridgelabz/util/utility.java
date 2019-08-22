@@ -763,20 +763,14 @@ public class utility
 			System.out.println(sum);
 			
 		}
-		public static void bubbleSort(int number)
+		public static void bubbleSort(int number,int[] array)
 		{
-			int array[];
+			
 			int i,j,c;
 			int temp=0;
-			array = new int[number];
-		 
-		    System.out.println("Enter " + number + " integers");
-		    for ( c = 0; c < number; c++)
-		    {
-		      array[c] = utility.intscan();
-		    }
+			
 		    System.out.println("Array of sorted elements:");
-		    for( i=0;i<array.length;i++)
+		    for( i=0;i<array.length-1;i++)
 		    {
 		    	for( j=0;j<(array.length-i-1);j++)
 		    	{
@@ -789,12 +783,92 @@ public class utility
 		    		
 		    	}
 		    	
-		    	System.out.println(array[j]);
+		    	
 		    }
+		   
 		    
 		}
+		
+		public static void insert(String arr[])
+		{
+			String key=" ";
+			int i=0;
+			for(int j=1;j<arr.length;j++)
+			{
+				key=arr[j];
+				i=j-1;
+				while(i>=0)
+				{
+					if(key.compareTo(arr[i])>0)
+						break;
+				}
+				arr[i+1]=arr[i];
+				i--;
+				}
+			arr[i+1]=key;
+			System.out.println(arr[i]);
 			
+			
+		}
+		public static void binary(int key,int first,int last,int number)
+		{
+			int mid=(first+last)/2;
+			int count=0;
+			
+			while(first<last && count==0)
+			{
+			System.out.println("enter yes if your value found");
+			System.out.println("enter no if your value is not found");
+			String s=utility.stringscan();
+			char choice=s.charAt(0) ;
+			switch(choice)
+			{
+			case 'N':
+				if(mid==key)
+				{
+					System.out.println("your value"+mid);
+				}
+				else if(mid<key)
+				{
+					first=mid+1;
+				}
+				else 
+				{
+					last=mid-1;
+				}
+				mid=(first+last)/2;
+				
+				break;
+				
+			case 'y':
+				System.out.println("your value is found"+mid);
+				count=1;
+				break;
+			
+				}
+			
+			}
+			
+		}
+		public static int binarySearch(String[] arr,String search)
+		{
+			int f=0,l=arr.length-1;
+			while(f<=l)
+			{
+				int m=f=(l-f)/2;
+				int result=search.compareTo(arr[m]);
+				if(result==0)
+					return m;
+				else if(result>0)
+					f=m+1;
+				else
+					l=m-1;
+					
+			}
+			return -1;
+		}
 }
+
 		
 		 
 	
