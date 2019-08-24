@@ -21,6 +21,7 @@ public class Pascal {
 		    			c=1;
 		    		else
 		    			c=c*(i-k+1)/k;
+		    		
 		    		System.out.print(" "+c);
 		    	}
 		    	System.out.print("\n");

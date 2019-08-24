@@ -21,7 +21,7 @@ public class WordListSearch
 		line=br.readLine();
 		sb.append(line);
 	}
-	String string=sb.readLine();
+	String string=br.readLine();
 	String[] arr=string.split(",");
 	String search="abc";
 	
