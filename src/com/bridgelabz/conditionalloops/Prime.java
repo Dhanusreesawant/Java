@@ -19,7 +19,11 @@ public class Prime {
 		int start=utility.intscan();
 		System.out.println("prime end from:");
 		int stop=utility.intscan();
-		utility.prime(start, stop);
+		int[] array=utility.prime(start, stop);
+		for(int i=0;i<array.length;i++) {
+			System.out.println(array[i]);
+		}
+		
 		
 		
 		

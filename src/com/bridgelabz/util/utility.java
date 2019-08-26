@@ -15,6 +15,7 @@ public class utility
 		int value=scanner.nextInt();
 		return value;
 		
+		
 	}
 	public static long longscan()
 	{
@@ -424,9 +425,10 @@ public class utility
 		 * @param start prime number start with given number
 		 * @param stop prime number stop with given number
 		 */
-		public static void prime(int start,int stop)
+		public static int[] prime(int start,int stop)
 		{
-			int count=0;
+			int arr[]=new int[100];
+			int count=0,index=0;
 			for(int i=start;i<stop;i++)
 			{
 				for(int j=2;j<i;j++)
@@ -443,11 +445,11 @@ public class utility
 				}
 				if(count==1)
 				{
-				  System.out.println(i);
+					arr[index++]=i;
 				}
 			}
 			
-			
+			return arr;
 		}
 		/**
 		 * @param str1 check string palindrome or not
@@ -468,50 +470,33 @@ public class utility
 				   return false;
 		}
 		
-		public static void anagram(String str1,String str2)
+		public static boolean anagram(String s1,String s2)
 		{
-			int flg=0,flg1=0;
-			int len;
-			int l1=str1.length();
-			int l2=str2.length();
-			if(l1==l2)
+			boolean status=true;
+			if (s1.length() != s2.length())
+			{  
+	            status = false;  
+	        } 
+			else 
+	        {  
+	            char[] ArrayS1 = s1.toCharArray();  
+	            char[] ArrayS2 = s2.toCharArray();  
+	            Arrays.sort(ArrayS1);  
+	            Arrays.sort(ArrayS2);  
+	            status = Arrays.equals(ArrayS1, ArrayS2);  
+	        }  
+			if(status==true)
 			{
-				len=l1;
-				for(int i=0;i<len;i++)
-				{
-					flg=0;
-					for(int j=0;j<len;j++)
-					{
-						if(str1.charAt(i)==str2.charAt(j))
-						{
-							flg=1;
-							break;
-						}
-					}
-					if(flg==0)
-					{
-						flg1=1;
-						break;
-						
-					}
-					
-				}
-				if(flg1==1)
-				{
-					System.out.println("not anagram");
-				}
-				else
-				{
-					System.out.println("anagram");
-				}
+				return true;
 			}
 			else
 			{
-				System.out.println("not anagram");
-			
+				return false;
 			}
+		        
+	   } 
 
-		}
+		
 		public static boolean isleapyear(int year)
 		{
 			if((year%4==0)&&(year%100!=0))
@@ -766,7 +751,7 @@ public class utility
 		public static void bubbleSort(int number,int[] array)
 		{
 			
-			int i,j,c;
+			int i,j;
 			int temp=0;
 			
 		    System.out.println("Array of sorted elements:");
@@ -867,6 +852,25 @@ public class utility
 			}
 			return -1;
 		}
+		public static boolean palindrome(int number)
+		{
+			int sum=0;
+			int rem=0;
+			int temp=number;
+			while(number>0)
+			{
+				rem=number%10;
+				sum=(sum*10)+rem;
+				number=number/10;
+			}
+			if(sum==temp)
+				return true;
+			else
+				return false;
+			
+		}
+		
+		
 }
 
 		
