@@ -307,6 +307,8 @@ public class utility
 			{
 				System.out.println("please give unit for conversion.......");
 			}
+			scanner.close();
+			
 		}
 		/**
 		 * flip the coin and calculate percentage
@@ -547,9 +549,7 @@ public class utility
 				rev(s, i, n-1);
 			
 			}
-			
-			
-			
+		
 		}
 		public static void permutation(char[] ch, int currentIndex)
 		{

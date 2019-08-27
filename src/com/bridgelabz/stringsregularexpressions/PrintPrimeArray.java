@@ -1,7 +1,5 @@
 package com.bridgelabz.stringsregularexpressions;
 
-import com.bridgelabz.util.utility;
-
 public class PrintPrimeArray {
 
 	public static void main(String[] args) {
