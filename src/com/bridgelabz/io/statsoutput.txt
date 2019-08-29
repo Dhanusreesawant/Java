@@ -1,0 +1,2 @@
+mean value: 0.700000
+standard dev value: 0.691000
