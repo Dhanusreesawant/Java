@@ -95,15 +95,15 @@ public class BirthDate {
 		System.out.println("jan -"+jan);
 		System.out.println("feb -"+feb);
 		System.out.println("mar -"+mar);
-		System.out.println("apr"+apr);
-		System.out.println("may"+may);
-		System.out.println("jun"+jun);
-		System.out.println("jul"+jul);
-		System.out.println("aug"+aug);
-		System.out.println("sep"+sep);
-		System.out.println("oct"+oct);
-		System.out.println("nov"+nov);
-		System.out.println("dec"+dec);
+		System.out.println("apr -"+apr);
+		System.out.println("may -"+may);
+		System.out.println("jun -"+jun);
+		System.out.println("jul -"+jul);
+		System.out.println("aug -"+aug);
+		System.out.println("sep -"+sep);
+		System.out.println("oct -"+oct);
+		System.out.println("nov -"+nov);
+		System.out.println("dec -"+dec);
 			
 			
 		}

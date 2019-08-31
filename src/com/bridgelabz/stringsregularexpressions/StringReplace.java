@@ -15,13 +15,16 @@ public class StringReplace {
 				"Everywhere a";
 		String[] arr1= {"chicks","duck","turkey","cat","dog"};
 		String[] arr2= {"chick","quack","gobble","meow-meow","bow-wow"};
+		String s3="";
 		for(int i=0;i<arr1.length;i++)
 		{
 			String s1=s.replace("%ANIMAL%", arr1[i]);
 			String s2=s1.replace("%SOUND%", arr2[i]);
-			System.out.println("\n"+s2);
+			s3=s3+s2;
+	//		System.out.println("\n"+s2);
 		}
-		
+
+		System.out.println("\n"+s3);
 	
 
 	}

@@ -1,6 +1,8 @@
 package com.bridgelabz.util;
 
 import java.lang.reflect.Array;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
@@ -869,7 +871,27 @@ public class utility
 				return false;
 			
 		}
-		
+		  public static String replaceStr(String name,String Fullname, String mobnumber) 
+		  {
+		 
+		 String formatOfString="Hello <<name>>, We have your full name "
+		+" as <<full name>> in our system. your contact number is 91­xxxxxxxxxx. Please,let us"+
+		" know in case of any clarification Thank you BridgeLabz 01/01/2016.";
+		 
+		 
+		 formatOfString=formatOfString.replaceAll("<<name>>",name);
+
+		 formatOfString=formatOfString.replaceAll("<<full name>>",Fullname);
+
+		 formatOfString=formatOfString.replaceAll("91­xxxxxxxxxx",mobnumber);
+		  
+		 DateTimeFormatter dateTimeFormatter;
+		 DateTimeFormatter dtf=DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	     LocalDate localdate= LocalDate.now();
+         formatOfString=formatOfString.replaceAll("01/01/2016", dtf.format(localdate));
+		  
+		        return formatOfString;
+		  }
 		
 }
 

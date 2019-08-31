@@ -4,32 +4,62 @@ package com.bridgelabz.stringsregularexpressions;
 
 
 
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 import com.bridgelabz.util.utility;
 
 public class RegularExpression {
 
 	public static void main(String[] args) {
-		String s="Hello <<name>>, We have your full name\n" + 
-				"as <<full name>> in our system. your contact number is 91­xxxxxxxxxx. Please,let us\n" + 
-				"know in case of any clarification Thank you BridgeLabz 01/01/2016.";
-		System.out.println(s);
+		
+		
+
+		String FirstName = "" , FullName="", MobNumber="";
+		boolean match, match1,match2;
 	
-		System.out.println("please print your name:");
-		String name=utility.stringscan();
-		String s1=s.replace("<<name>>"," name");
+
+		do {
+		System.out.println("enter ur first name"+FirstName);
+		FirstName=utility.stringscan();
+
+		System.out.println("enter ur Full name"+FullName);
+		FullName=utility.stringscan();
+
+		System.out.println("enter ur mobnumber"+MobNumber);
+		MobNumber=utility.stringscan();
+
+		if(match=Pattern.matches("[a-zA-Z]+",FirstName)) 
+
+		System.out.println();
+
+		else
+		System.out.println("your firstname is invalid");
+
+		if(match1=Pattern.matches("^[a-zA-Z\\s]*$",FullName)) 
+
+		System.out.println();
+
+		else
+		System.out.println("your "+FullName+" is invalid please enter valid fullname");
+
+		if(match2=Pattern.matches("(0/91)?[7-9][0-9]{9}",MobNumber)) 
+		System.out.println();
+		 
+		else
+		System.out.println("your mobnumber is invalid please enter valid mobnumber");
+		}	 
+		 
+		while(match==false|| match1==false|| match2==false);
+
+		String actualstr=utility.replaceStr(FirstName,FullName,MobNumber);
+		System.out.println(actualstr);
 		
-		System.out.println("please print your full name:");
-		String fullname=utility.stringscan();
-		String s2=s1.replace("<<full name>>"," fullname");
-		
-		System.out.println("please print your phone number:");
-		int number=utility.intscan();
-		String s3=s2.replace("91­xxxxxxxxxx"," number");
-		System.out.println(s3);
-		
-		
-		
-			
+		}
+	
 	}
 
-}
+
+

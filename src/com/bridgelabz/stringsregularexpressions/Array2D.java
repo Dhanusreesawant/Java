@@ -7,8 +7,11 @@ public class Array2D {
 
 	public static void main(String[] args)
 	{
+		System.out.println("enter the no of rows: ");
 		int m =utility.intscan();
+		System.out.println("enter the no of columns: ");
 		int n=utility.intscan();
+		System.out.println("enter the "+m*n+" elements:");
 		int[][] arr=new int[m][n];
 		for(int i=0;i<m;i++)
 		{

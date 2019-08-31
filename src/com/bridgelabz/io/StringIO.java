@@ -7,13 +7,12 @@ public class StringIO {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	
-				
+					
 						String[] arr1={"chicks","duck","turtle","dog"};
 						String[] arr2={"chick","quack","nerp-nerp","bow wow"};
 						try
 						{
-							FileInputStream file=new FileInputStream("/home/admin1/eclipse-workspace/BasicJavaPrograms/src/com/bridgelabz/io/str.txt");
+							FileInputStream file=new FileInputStream("f://dem.txt");
 							byte b[]=new byte [file.available()];
 							file.read(b);
 							String s=new String(b);
@@ -24,7 +23,7 @@ public class StringIO {
 							{
 							 String s1=s.replace("%ANIMAL%",arr1[i]);
 							 String s2=s1.replace("%SOUND%",arr2[i]);
-								FileOutputStream f=new FileOutputStream("/home/admin1/eclipse-workspace/BasicJavaPrograms/src/com/bridgelabz/io/stroutput.txt");;
+								FileOutputStream f=new FileOutputStream("F://demo.txt");
 								byte b1[]=s2.getBytes();
 								f.write(b1);
 								f.close();
@@ -42,6 +41,10 @@ public class StringIO {
 						{
 							e.printStackTrace();
 						}
-		}
+						
 
-}
+					}
+				}
+				
+				
+						
